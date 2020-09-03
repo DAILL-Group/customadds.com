@@ -1,6 +1,8 @@
 // default dependancies
 
-
+var http = require("http");
+var url = require("url");
+var fs = require("fs");
 
 
 // default files
@@ -26,6 +28,13 @@ var Server = http.createServer(function (req, res) {
           
           res.writeHead(200, {"Content-Type": "text/html"})
           res.write(homePage)
+     }
+     
+     if (page == "/settings") {
+          
+          res.writeHead(200, {"Content-Type": "text/html"})
+          res.write(settingsPage)
+          
      }
      
 });
